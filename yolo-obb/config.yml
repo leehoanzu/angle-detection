@@ -1,0 +1,11 @@
+# =====================================================
+# Parse information socket to connect robot via Lan route
+# ======================================================
+---
+Name: 'server' # or client
+
+Receive: 'a'  # Receive message from another host
+Send: 'e'     # Send message to another host
+
+Port: 3000
+Host: '192.168.1.8'

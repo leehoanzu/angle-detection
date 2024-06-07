@@ -1,0 +1,122 @@
+- remove all container: sudo docker rm -f $(sudo docker ps -aq)
+- remove all image: docker image rm $(docker image ls -q -f dangling=true)
+- Logging container: 	docker ps -la
+			docker logs <container_id
+- disable desktop on boot: sudo systemctl set-default multi-user.target    
+- enable desktop on boot: sudo systemctl set-default graphical.target      	
+- Add group user:  sudo usermod -aG docker $USER		
+- disable destop teporarily: $	 sudo init 3     # stop the desktop
+				# log your user back into the console (Ctrl+Alt+F1, F2, ect)
+				$ sudo init 5     # restart the desktop
+				
+- Check info jetson: jtop		
+
+- Run docker effectively: sudo docker run --runtime nvidia -it --rm --network=host <name-image>	
+- Build dependency with own package:  ./build.sh --base=my_container:latest --name=my_container:pytorch pytorch  # add pytorch to your existing container
+					(ref: https://github.com/dusty-nv/jetson-containers/blob/L4T-R35.4.1/README.md)
+					
+					
+					
+Tao bien moi truong khi lam viec: 
+	1. python3 -m venv venv (tao thu muc venv va bien moi truong vev)
+	2. source ./venv/bin/activate (kuch hoat venv)
+	
+- Chu y khi tai opencv co the do opencv khong khop nen hay dung lenh: pip install "opencv-python-headless<4.3"
+								(ref: https://github.com/opencv/opencv-python/issues/591)
+								
+- Chu y trong viec bo xung cach chay nhanh bang ./
+		ta nen them cac device gpio chip vao: 
+				GPIOCHIP=""
+
+				# Duyệt qua các số từ 0 đến 9
+				for i in {0..9}; do
+				    # Kiểm tra xem thiết bị /dev/gpiochip$i có tồn tại không
+				    if [ -e "/dev/gpiochip$i" ]; then
+					# Nếu tồn tại, thêm vào biến GPIOCHIP
+					GPIOCHIP="$GPIOCHIP --device /dev/gpiochip$i"
+				    fi
+				done
+- Chay webcam: 	
+	v4l2-ctl --list-devices	( kiem tra thiet bi camera)		
+	gst-launch-1.0 v4l2src device=/dev/video4 ! video/x-raw,format=YUY2,width=640,height=480,framerate=30/1 ! videoconvert ! ximagesink 
+				
+====================
+			*** Cách tạo biến môi trường****
+Tham khảo: https://www.hostinger.vn/huong-dan/linux-environment-variable
+1> Cách tạo biến môi trường:
+B1: kiểm tra các biến đã tồn tại
+		printenv | less
+B2: Tạo biến môi trường
+		export VAR="value"
+		* Trong đó:	export – lệnh được dùng để tạo biến
+				VAR – tên biến
+				= – báo cho biết sau dấu = là giá trị
+				“value” – giá trị thực tế
+		* Ex: export RUNTEST="/home/deepstream/Desktop/docker/docker-test-v2/run.sh "
+B3: In kiểm tra trên mà hình
+		printenv 'ENV-NAME'
+	
+B4: Chạy trương trình
+		$ENV-NAME 'program'
+		*Ex: $RUNTEST test
+		
+B5: Lưu biến môi trường vào file bash shell (để auto)
+	* nano ~/.bhrc
+	EX: echo 'export RUNTEST="/home/deepstream/Desktop/docker/docker-test-v2/run.sh "' >> ~/.bashrc				
+	
+B6: Xóa biến môi trường
+	* unset ENV_NAME	
+	
+=======================
+		*** Cách sudo không cần nhập password ***
+Tham khảo: https://askubuntu.com/questions/147241/execute-sudo-without-password
+B1: Mở terminal và nhập 
+		* sudo visudo
+B2: Thêm lệnh sau vào cuối
+		* $USER ALL=(ALL) NOPASSWD: ALL (hoặc câu lệnh bạn cần )
+		với: $USER: SYSTEM-NAME
+		Ex: $USER ALL=(ALL) NOPASSWD: /usr/bin/docker run
+
+======================			
+
+========================
+Lenh mo mot terminal va chay dong lenh
+	gnome-terminal -- bash -c "$RUNAUTO test; exec bash"
+
+========================
+
+=====================================
+How to install ultralytics:
+		pip install ultralytics
+Watch the setings:
+	yolo settings				
+===================================
+
+================================
+How to convert Yolo to onnx
+	https://github.com/AICVer/yolov9.infer/blob/main/export.py
+=========================================================
+		Set mode fan on jetson
+ref: https://developer.ridgerun.com/wiki/index.php/Xavier/JetPack_5.0.2/Performance_Tuning/Maximizing_Performance
+
+	sudo nano /etc/nvfancontrol.conf
+	
+	then config
+FAN_PROFILE full {
+		#TEMP 	HYST	PWM	RPM
+		0	10 	140 	3200
+		30	8	220	5100
+		45	6	250	5800
+		76	7 	255 	6000
+	}
+and folowwing commands:
+	sudo systemctl stop nvfancontrol
+	sudo rm /var/lib/nvfancontrol/status
+	sudo systemctl start nvfancontrol		
+
+================================================================
+		How to run startup application
+
+/bin/bash -c "sleep 15 && ./run.sh leehoanzu/yolo-utils"
+  							
+====================================================================
