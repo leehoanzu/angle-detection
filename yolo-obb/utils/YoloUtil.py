@@ -106,7 +106,7 @@ if __name__ == '__main__':
     # Initialize YOLOInference class
     yolo_inference = YOLOInference(preTrainedModelPath, labelPath, classPath)
 
-    pathImage = getAbsPath("./image/rightway.jpg")
+    pathImage = getAbsPath("../image/rightway.jpg")
     
     t0 = time.time()
 
