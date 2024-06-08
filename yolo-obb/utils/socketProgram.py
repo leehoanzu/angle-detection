@@ -66,7 +66,7 @@ class SocketConnection:
 
 if __name__ == '__main__': 
     # Them socket vao model
-    host = "192.168.1.4" # IP address from your host pc 192.168.1.2
+    host = "192.168.1.8" # IP address from your host pc 192.168.1.2
     port = 3000  # socket server port number
 
     # client = SocketConnection(host, port)

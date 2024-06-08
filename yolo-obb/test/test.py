@@ -3,11 +3,11 @@ import sys
 
 import os
 
-def getAbsPath(path):
-    # Get absolutely path
-    currentDir = os.path.dirname(os.path.abspath(__file__))
+# def getAbsPath(path):
+#     # Get absolutely path
+#     currentDir = os.path.dirname(os.path.abspath(__file__))
 
-    return os.path.abspath(os.path.join(currentDir, path))
+#     return os.path.abspath(os.path.join(currentDir, path))
 
 # def extract_parent_directory(path):
 #     # Chuyển đổi dấu ngã thành đường dẫn tuyệt đối
@@ -43,6 +43,12 @@ def load_labels(labelPath):
     return labels
 
 if __name__ == '__main__':
+    def getAbsPath(path):
+        # Get absolutely path
+        currentDir = os.path.dirname(os.path.abspath(__file__))
+
+        return os.path.abspath(os.path.join(currentDir, path))
+    
     # Test yaml path
     items = configYmlFile()
     print("Items: ", items['Send'])
@@ -57,6 +63,7 @@ if __name__ == '__main__':
     print("Model path: ", modelpath)
 
     print(f'This is {classId[1][3:]} object at {label[90][4:]}\n') # This is blue object at Angle 90
+
 
     # print("Extract parent file: ", extract_parent_directory("../label/class.txt"))
 

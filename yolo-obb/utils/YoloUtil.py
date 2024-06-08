@@ -87,15 +87,26 @@ if __name__ == '__main__':
     # Path of pretrained model
     # preTrainedModelPath = "./model/onnx/best.pt"
     # Load the exported TensorRT model
-    preTrainedModelPath = "./model/best.engine" 
+    
+    def getAbsPath(path):
+        # Get absolutely path
+        currentDir = os.path.dirname(os.path.abspath(__file__))
+
+        return os.path.abspath(os.path.join(currentDir, path))
+    
+    # preTrainedModelPath = getAbsPath("../model/best.engine")
+    preTrainedModelPath = getAbsPath("../model/best.pt")
 
     # Path of label
-    labelPath = "./label/label.txt"
+    labelPath = getAbsPath("../label/label.txt")
+
+    # Path of class color
+    classPath = getAbsPath("../label/class.txt")
 
     # Initialize YOLOInference class
-    yolo_inference = YOLOInference(preTrainedModelPath, labelPath)
+    yolo_inference = YOLOInference(preTrainedModelPath, labelPath, classPath)
 
-    pathImage = "./image/rightway.jpg"
+    pathImage = getAbsPath("./image/rightway.jpg")
     
     t0 = time.time()
 
