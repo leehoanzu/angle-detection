@@ -10,7 +10,7 @@ def take_photo():
     cap.release()
 
 # Connect to webcam
-cap = cv2.VideoCapture(2) # 2 or 4
+cap = cv2.VideoCapture(4) # 2 or 4
 # Loop through every frame until we close our webcam
 while cap.isOpened(): 
     ret, frame = cap.read()

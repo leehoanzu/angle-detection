@@ -45,6 +45,7 @@ def threadCap(connType, connector):
         # executor.submit(threadPredict, img, connType, connector).result()
     else:
         print("Failed to capture image!")
+        time.sleep(2)
         threadCap(connType, connector)
     
 def configYmlFile():
