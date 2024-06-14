@@ -1,6 +1,6 @@
 # Building Containers
 
-the normal way to build container on your Jetson would be using [`docker build`](https://docs.docker.com/reference/cli/docker/image/build/) like this:
+The normal way to build container on your Jetson would be using [`docker build`](https://docs.docker.com/reference/cli/docker/image/build/) like this:
 
 ```bash
 $ sudo docker build -t image .
