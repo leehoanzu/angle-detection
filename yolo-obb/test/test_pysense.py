@@ -2,9 +2,6 @@ import pyrealsense2 as rs
 import numpy as np
 import cv2
 
-
-print(f"OpenCV version: {cv2.__version__}")
-
 # Configure RealSense pipeline for color stream
 pipeline = rs.pipeline()
 config = rs.config()

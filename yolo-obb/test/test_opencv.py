@@ -1,13 +1,5 @@
-# Import opencv for computer vision stuff
 import cv2
-# Import matplotlib so we can visualize an image
 from matplotlib import pyplot as plt
-
-def take_photo(): 
-    cap = cv2.VideoCapture(4)
-    ret, frame = cap.read()
-    cv2.imwrite('webcamphoto.jpg', frame)
-    cap.release()
 
 # Connect to webcam
 cap = cv2.VideoCapture(4) # 2 or 4

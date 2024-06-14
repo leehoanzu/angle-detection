@@ -13,7 +13,9 @@ def client_program():
         print(f"Error connecting to server: {e}")
         return
 
+    # Send message to server
     message = input(' -> ')
+
     while message.lower().strip() != "bye":
         try:
             if message == "":

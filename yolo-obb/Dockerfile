@@ -1,3 +1,6 @@
+# Select and use the correct version of the l4t-pytorch container
+# Go to the NVIDIA NGC website: https://ngc.nvidia.com.
+
 FROM  dustynv/l4t-pytorch:r35.4.1
 
 WORKDIR /home
