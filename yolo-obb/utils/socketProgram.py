@@ -1,6 +1,7 @@
 import socket
 import yaml
 import time
+import os
 
 class SocketConnection:
     def __init__(self, host, port=3000):
@@ -45,7 +46,7 @@ class SocketConnection:
         except socket.error as e:
             print(f"Failed to connect to {self.host} on port {self.port}: {e}")
             time.sleep(2)
-            self.serverBind()
+            self.serverBind() # Try bind again
     
     def serverRcv(self):
         return self.conn.recv(1024).decode() # Receive response from client
@@ -66,9 +67,15 @@ class SocketConnection:
 
 if __name__ == '__main__': 
     # Them socket vao model
-    host = "192.168.1.8" # IP address from your host pc 192.168.1.2
+    host = "192.168.1.2" # IP address from your host pc 192.168.1.2
     port = 3000  # socket server port number
 
+    def getAbsPath(path):
+        # Get absolutely path
+        currentDir = os.path.dirname(os.path.abspath(__file__))
+        return os.path.abspath(os.path.join(currentDir, path))
+    
+    # Client role!
     # client = SocketConnection(host, port)
     # client.clientConnect()
     # try:
@@ -79,16 +86,21 @@ if __name__ == '__main__':
     # finally:
     #     client.close()  # close the connection
 
-    with open('config.yml', 'r') as f:
+    with open(getAbsPath('../config.yml'), 'r') as f:
         items = yaml.load(f, Loader=yaml.FullLoader)
 
     # Test connect client with server role
-    server = SocketConnection(items['Host'], 3000)   # 192.168.1.10
+    server = SocketConnection(items['Host'], 3000)   # 192.168.1.8
+    print("Waitting connection!\n")
     server.serverBind()
-    try:
-        data = server.serverRcv()
-        print("Reveived from client: " + str(data))
-        mess = "ba"
-        server.send("server", server, str(mess))
-    finally:
-        server.close()
+    while True:
+        try:
+            data = server.serverRcv()
+            print("Reveived from client: " + str(data))
+            mess = input('-> ')
+            server.send("server", server, str(mess))
+        except TypeError:
+            continue
+        except KeyboardInterrupt:
+            server.close()
+            break

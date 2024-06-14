@@ -11,7 +11,7 @@ RUN apt-get install -y python3-pip && \
     pip install "opencv-python-headless<4.3" && \
     pip install numpy --upgrade  && \
     pip install numpy==1.23.5 && \
-    pip install realsense
+    pip install pyrealsense2
 
 # Command to run the application
 CMD ["python3", "./utils/main.py"]

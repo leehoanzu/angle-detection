@@ -10,12 +10,15 @@ import time
 import logging
 import os
 
-class YOLOInference:
+class YoloInference:
     def __init__(self, preTrainedModelPath, labelPath, classPath):
         # Set logging level to ERROR for the Ultralytics module
         logging.getLogger('ultralytics').setLevel(logging.ERROR)
         
-        # Load a pretrained YOLO model
+        ''' Load a pretrained YOLO model
+            Load a label and class
+            Choose device
+        '''
         self.model = self.load_model(preTrainedModelPath) 
         self.model.predict()
         
@@ -83,7 +86,6 @@ class YOLOInference:
 
 
 if __name__ == '__main__':    
-    
     # Path of pretrained model
     # preTrainedModelPath = "./model/onnx/best.pt"
     # Load the exported TensorRT model
@@ -91,7 +93,6 @@ if __name__ == '__main__':
     def getAbsPath(path):
         # Get absolutely path
         currentDir = os.path.dirname(os.path.abspath(__file__))
-
         return os.path.abspath(os.path.join(currentDir, path))
     
     # preTrainedModelPath = getAbsPath("../model/best.engine")
@@ -103,8 +104,8 @@ if __name__ == '__main__':
     # Path of class color
     classPath = getAbsPath("../label/class.txt")
 
-    # Initialize YOLOInference class
-    yolo_inference = YOLOInference(preTrainedModelPath, labelPath, classPath)
+    # Initialize YoloInference class
+    yolo_inference = YoloInference(preTrainedModelPath, labelPath, classPath)
 
     pathImage = getAbsPath("../image/rightway.jpg")
     
@@ -131,5 +132,6 @@ if __name__ == '__main__':
     #     print(f'Done. ({time.time() - t1:.3f}s)')
     # print(f'Done. ({time.time() - t0:.3f}s)')
         # time.sleep(2)
+        
     # Announce success
     print("Build successfully!")

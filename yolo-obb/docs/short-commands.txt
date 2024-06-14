@@ -72,6 +72,9 @@ B6: Xóa biến môi trường
 Tham khảo: https://askubuntu.com/questions/147241/execute-sudo-without-password
 B1: Mở terminal và nhập 
 		* sudo visudo
+		hoac sudo EDITOR=nano visudo
+		     sudo EDITOR=editor visudo
+
 B2: Thêm lệnh sau vào cuối
 		* $USER ALL=(ALL) NOPASSWD: ALL (hoặc câu lệnh bạn cần )
 		với: $USER: SYSTEM-NAME
