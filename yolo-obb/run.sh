@@ -52,8 +52,9 @@ if [ $ARCH = "aarch64" ]; then
 	cat /proc/device-tree/model > /tmp/nv_jetson_model
 
 	set -x
-
-	$SUDO docker run --runtime nvidia -d --restart always --network host \
+        
+        # You can replace -it with -d for daemon mode; it is needed to run the application automatically
+	$SUDO docker run --runtime nvidia -it --rm --network host \
 		--volume /tmp/argus_socket:/tmp/argus_socket \
 		--volume /etc/enctune.conf:/etc/enctune.conf \
 		--volume /etc/nv_tegra_release:/etc/nv_tegra_release \
