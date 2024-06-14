@@ -1,3 +1,0 @@
-AttributeError: partially initialized module 'cv2' has no attribute '_registerMatType' (most likely due to a circular import)
-
---rm 
