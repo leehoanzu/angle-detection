@@ -34,7 +34,8 @@ model_conv = train_model(model_conv, criterion, optimizer_conv,
 > [!NOTE]  
 > <sup>- For more information. Please check [`classification.ipynb`](https://github.com/leehoanzu/angle-detection/blob/main/train/classification.ipynb)</sup>
 
-![Mô tả hình ảnh](đường_dẫn_đến_ảnh)
+![results](https://github.com/leehoanzu/angle-detection/blob/main/screen-shots/pytorch_results.png)
+![confusion_magic](https://github.com/leehoanzu/angle-detection/blob/main/screen-shots/pytorch_confusion_magic.png)
 
 # Object Detection
 
@@ -55,4 +56,5 @@ results = model.train(data="data.yaml", epochs=100, imgsz=640)
 > [!NOTE]  
 > <sup>- For more information. Please check [`object_detection.ipynb`](https://github.com/leehoanzu/angle-detection/blob/main/train/object_detection.ipynb)</sup>
 
-![Mô tả hình ảnh](đường_dẫn_đến_ảnh)
+![label](https://github.com/leehoanzu/angle-detection/blob/main/screen-shots/yolo_label.jpeg)
+![label](https://github.com/leehoanzu/angle-detection/blob/main/screen-shots/yolo_valid.png)
