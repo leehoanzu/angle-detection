@@ -29,6 +29,7 @@ $ pip3 install numpy torch-2.1.0a0+41361538.nv23.06-cp38-cp38-linux_aarch64.whl
 ```
 
 - Torchvision
+
 Select the version of torchvision to download depending on the version of PyTorch that you have installed.
 ```bash
 $ sudo apt-get install libjpeg-dev zlib1g-dev libpython3-dev libopenblas-dev libavcodec-dev libavformat-dev libswscale-dev
@@ -38,7 +39,8 @@ $ export BUILD_VERSION=0.16.1  # where 0.16.1  is the torchvision version
 $ python3 setup.py install --user
 ```
 > [!NOTE]  
-> <sup>- The Torchvision version for PyTorch v2.1 is v0.16.1. See the table for the correct version of Torchvision to download!</sup><br>
+> <sup>- The Torchvision version for PyTorch v2.1 is v0.16.1. See the table for the correct version of Torchvision to download!</sup>
+
 | PyTorch Version | Torchvision Version |
 |-----------------|---------------------|
 | v1.0            | v0.2.2              |
