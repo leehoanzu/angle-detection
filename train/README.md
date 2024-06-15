@@ -34,7 +34,7 @@ model_conv = train_model(model_conv, criterion, optimizer_conv,
 > [!NOTE]  
 > <sup>- For more information. Please check [`classification.ipynb`](https://github.com/leehoanzu/angle-detection/blob/main/train/classification.ipynb)</sup>
 
-![results](https://github.com/leehoanzu/angle-detection/blob/main/screen-shots/pytorch_results.png)
+![results](https://github.com/leehoanzu/angle-detection/blob/main/screen-shots/pytorch_predict_1.png) ![results](https://github.com/leehoanzu/angle-detection/blob/main/screen-shots/pytorch_predict_2.png) ![results](https://github.com/leehoanzu/angle-detection/blob/main/screen-shots/pytorch_predict_3.png)
 ![confusion_magic](https://github.com/leehoanzu/angle-detection/blob/main/screen-shots/pytorch_confusion_magic.png)
 
 # Object Detection
