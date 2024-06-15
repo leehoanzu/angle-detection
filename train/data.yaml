@@ -1,0 +1,13 @@
+path: /path/to/save/your/folder
+
+# Create folder with obb will have two sub-folder is image and label
+# Choose folder image to train
+train: train/images 
+val: valid/images
+test: test/images
+
+names: 
+  0: black
+  1: blue
+  2: white
+
