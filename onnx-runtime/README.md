@@ -6,7 +6,7 @@ This section will provide a detailed guide on how to deploy your model using ONN
 
 ### Export
 
-In this tutorial, we describe how to convert a model defined in PyTorch into the ONNX format using the TorchScript `torch.onnx.export` ONNX exporter.
+In this tutorial, we describe how to convert a model defined in PyTorch into the ONNX format using the TorchScript [`torch.onnx.export`](https://pytorch.org/tutorials/advanced/super_resolution_with_onnxruntime.html) ONNX exporter.
 
 The [`exported model`](https://github.com/leehoanzu/angle-detection/blob/main/onnx-runtime/onnx_export.py) will be executed with ONNX Runtime. ONNX Runtime is a performance-focused engine for ONNX models, which inferences efficiently across multiple platforms and hardware.
 
@@ -74,7 +74,7 @@ def _init_():
     print("Starting demo now! Press CTRL+C to exit\n")
 ```
 
-### Inference
+### Infer
 
 ```python
 def infernce(self, imagePath):
@@ -101,3 +101,7 @@ def dispPreds(self, output):
     preds = np.argmax(out)
     print(f'Predicted: {self.labels[preds]}')
 ```
+
+> [!NOTE]  
+> <sup>- This quote is sourced from [`onnx_utils.py`]() and [`main.py]().</sup><br>
+> <sup>- For more detailed information, please refer to these files.</sup>
