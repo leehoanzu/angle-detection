@@ -4,7 +4,7 @@ Socket programming is a way of connecting two nodes on a network to communicate 
 
 ## State Diagram for Server and Client Model
 
-![state diagram]()
+![state diagram](https://github.com/leehoanzu/angle-detection/blob/main/screen-shots/diagram_socket.png)
 
 ## Stages for Server
 
@@ -62,3 +62,7 @@ port = 5000
 
 client_socket.connect((host, port))
 ```
+
+## Reference
+
+![`Result`](https://github.com/leehoanzu/angle-detection/blob/main/screen-shots/socket_connection.png)
