@@ -103,5 +103,5 @@ def dispPreds(self, output):
 ```
 
 > [!NOTE]  
-> <sup>- This quote is sourced from [`onnx_utils.py`]() and [`main.py]().</sup><br>
+> <sup>- This quote is sourced from [`onnx_utils.py`](https://github.com/leehoanzu/angle-detection/blob/main/onnx-runtime/onnx_utils.py) and [`main.py`](https://github.com/leehoanzu/angle-detection/blob/main/onnx-runtime/main.py).</sup><br>
 > <sup>- For more detailed information, please refer to these files.</sup>
