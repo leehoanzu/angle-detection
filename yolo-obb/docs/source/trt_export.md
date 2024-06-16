@@ -48,3 +48,7 @@ model.export(
 > [!NOTE]  
 > <sup>- It took almost three hours to export with INT8 quantization.</sup><br>
 > <sup>- File [`data.yaml`](https://github.com/leehoanzu/angle-detection/blob/main/train/data.yaml) is the confige file to train model.</sup>
+
+## Reference
+
+![tensor_rt_results](https://github.com/leehoanzu/angle-detection/blob/main/screen-shots/trt_export.png)
