@@ -19,7 +19,7 @@ In this repository, we provide comprehensive guidance on how to deploy an AI mod
 
 * Integrate Jetson's inference capabilities and communicate with the ABB robot arm.
 
-[![Integrate](https://github.com/leehoanzu/angle-detection/blob/main/screen-shots/automatic_operation.gif)](https://youtu.be/C5XvOQaP5cA)
+<a href="https://youtu.be/C5XvOQaP5cA"><img src="https://github.com/leehoanzu/angle-detection/blob/main/screen-shots/automatic_operation.gif"></a> <br/>
 
 * Console
 
