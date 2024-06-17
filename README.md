@@ -19,7 +19,7 @@ In this repository, we provide comprehensive guidance on how to deploy an AI mod
 
 * Integrate Jetson's inference capabilities and communicate with the ABB robot arm.
 
-[![Integrate](https://github.com/leehoanzu/angle-detection/blob/main/screen-shots/genaral.jpg)](https://youtu.be/C5XvOQaP5cA)
+[![Integrate](https://github.com/leehoanzu/angle-detection/blob/main/screen-shots/automatic_operation.gif)](https://youtu.be/C5XvOQaP5cA)
 
 * Console
 
@@ -37,7 +37,7 @@ In this repository, we provide comprehensive guidance on how to deploy an AI mod
 
 * Copyright &#169; 2024 Lê Hoàng Vũ
 
-## Author
+## Authors
 
 * Lê Hoàng Vũ
 * Nguyễn Trọng Hiếu
